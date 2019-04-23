@@ -7,7 +7,6 @@ type key int
 const (
 	secretKey key = 0
 	userKey   key = 1
-	streamKey key = 2
 )
 
 func NewContextWithSecretKey(ctx context.Context, secret string) context.Context {
@@ -25,14 +24,5 @@ func NewContextWithUserID(ctx context.Context, userID string) context.Context {
 
 func UserIDFromContext(ctx context.Context) (string, bool) {
 	userID, ok := ctx.Value(userKey).(string)
-	return userID, ok
-}
-
-func NewContextWithStreamID(ctx context.Context, streamID string) context.Context {
-	return context.WithValue(ctx, streamKey, streamID)
-}
-
-func StreamIDFromContext(ctx context.Context) (string, bool) {
-	userID, ok := ctx.Value(streamKey).(string)
 	return userID, ok
 }
