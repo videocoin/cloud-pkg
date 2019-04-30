@@ -28,7 +28,7 @@ var (
 )
 
 // StreamABI is the input ABI used to generate the binding from.
-const StreamABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"client\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBitrates\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"isChunk\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getCandidateProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"refundAllowed\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"hasValidProof\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"getOutChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"addInputChunkId\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunkCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"},{\"name\":\"outChunkId\",\"type\":\"uint256\"}],\"name\":\"submitProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getProofCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"isBitrateReady\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"RTMP\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"scrapProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getValidProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"validator\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"outStreams\",\"outputs\":[{\"name\":\"required\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"validateProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isStreamReady\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"funds\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"streamId\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"client\",\"type\":\"address\"},{\"name\":\"chunks\",\"type\":\"uint256[]\"},{\"name\":\"bitrates\",\"type\":\"uint256[]\"},{\"name\":\"rtmp\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofSubmited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"ChunkProofValidated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofScrapped\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"claimant\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"AccountFunded\",\"type\":\"event\"}]"
+const StreamABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"client\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ended\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBitrates\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"isChunk\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getCandidateProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"refundAllowed\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"hasValidProof\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"getOutChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"addInputChunkId\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunkCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"},{\"name\":\"outChunkId\",\"type\":\"uint256\"}],\"name\":\"submitProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getProofCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"isBitrateTranscoded\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"RTMP\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"id\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"endStream\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"scrapProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getValidProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"validator\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"outStreams\",\"outputs\":[{\"name\":\"required\",\"type\":\"bool\"},{\"name\":\"validatedChunks\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"validateProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isTranscodingDone\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"},{\"name\":\"client\",\"type\":\"address\"},{\"name\":\"chunks\",\"type\":\"uint256[]\"},{\"name\":\"bitrates\",\"type\":\"uint256[]\"},{\"name\":\"rtmp\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofSubmited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"ChunkProofValidated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofScrapped\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Refunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"AccountFunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"OutOfFunds\",\"type\":\"event\"}]"
 
 // Stream is an auto generated Go binding around an Ethereum contract.
 type Stream struct {
@@ -224,30 +224,30 @@ func (_Stream *StreamCallerSession) Client() (common.Address, error) {
 	return _Stream.Contract.Client(&_Stream.CallOpts)
 }
 
-// Funds is a free data retrieval call binding the contract method 0xe2ae93fb.
+// Ended is a free data retrieval call binding the contract method 0x12fa6feb.
 //
-// Solidity: function funds(address ) constant returns(uint256)
-func (_Stream *StreamCaller) Funds(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
+// Solidity: function ended() constant returns(bool)
+func (_Stream *StreamCaller) Ended(opts *bind.CallOpts) (bool, error) {
 	var (
-		ret0 = new(*big.Int)
+		ret0 = new(bool)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "funds", arg0)
+	err := _Stream.contract.Call(opts, out, "ended")
 	return *ret0, err
 }
 
-// Funds is a free data retrieval call binding the contract method 0xe2ae93fb.
+// Ended is a free data retrieval call binding the contract method 0x12fa6feb.
 //
-// Solidity: function funds(address ) constant returns(uint256)
-func (_Stream *StreamSession) Funds(arg0 common.Address) (*big.Int, error) {
-	return _Stream.Contract.Funds(&_Stream.CallOpts, arg0)
+// Solidity: function ended() constant returns(bool)
+func (_Stream *StreamSession) Ended() (bool, error) {
+	return _Stream.Contract.Ended(&_Stream.CallOpts)
 }
 
-// Funds is a free data retrieval call binding the contract method 0xe2ae93fb.
+// Ended is a free data retrieval call binding the contract method 0x12fa6feb.
 //
-// Solidity: function funds(address ) constant returns(uint256)
-func (_Stream *StreamCallerSession) Funds(arg0 common.Address) (*big.Int, error) {
-	return _Stream.Contract.Funds(&_Stream.CallOpts, arg0)
+// Solidity: function ended() constant returns(bool)
+func (_Stream *StreamCallerSession) Ended() (bool, error) {
+	return _Stream.Contract.Ended(&_Stream.CallOpts)
 }
 
 // GetBitrates is a free data retrieval call binding the contract method 0x14cc12d9.
@@ -530,30 +530,56 @@ func (_Stream *StreamCallerSession) HasValidProof(bitrate *big.Int, chunkId *big
 	return _Stream.Contract.HasValidProof(&_Stream.CallOpts, bitrate, chunkId)
 }
 
-// IsBitrateReady is a free data retrieval call binding the contract method 0x9c2b8a92.
+// Id is a free data retrieval call binding the contract method 0xaf640d0f.
 //
-// Solidity: function isBitrateReady(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamCaller) IsBitrateReady(opts *bind.CallOpts, bitrate *big.Int) (bool, error) {
+// Solidity: function id() constant returns(uint256)
+func (_Stream *StreamCaller) Id(opts *bind.CallOpts) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Stream.contract.Call(opts, out, "id")
+	return *ret0, err
+}
+
+// Id is a free data retrieval call binding the contract method 0xaf640d0f.
+//
+// Solidity: function id() constant returns(uint256)
+func (_Stream *StreamSession) Id() (*big.Int, error) {
+	return _Stream.Contract.Id(&_Stream.CallOpts)
+}
+
+// Id is a free data retrieval call binding the contract method 0xaf640d0f.
+//
+// Solidity: function id() constant returns(uint256)
+func (_Stream *StreamCallerSession) Id() (*big.Int, error) {
+	return _Stream.Contract.Id(&_Stream.CallOpts)
+}
+
+// IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
+//
+// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
+func (_Stream *StreamCaller) IsBitrateTranscoded(opts *bind.CallOpts, bitrate *big.Int) (bool, error) {
 	var (
 		ret0 = new(bool)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "isBitrateReady", bitrate)
+	err := _Stream.contract.Call(opts, out, "isBitrateTranscoded", bitrate)
 	return *ret0, err
 }
 
-// IsBitrateReady is a free data retrieval call binding the contract method 0x9c2b8a92.
+// IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
 //
-// Solidity: function isBitrateReady(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamSession) IsBitrateReady(bitrate *big.Int) (bool, error) {
-	return _Stream.Contract.IsBitrateReady(&_Stream.CallOpts, bitrate)
+// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
+func (_Stream *StreamSession) IsBitrateTranscoded(bitrate *big.Int) (bool, error) {
+	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, bitrate)
 }
 
-// IsBitrateReady is a free data retrieval call binding the contract method 0x9c2b8a92.
+// IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
 //
-// Solidity: function isBitrateReady(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamCallerSession) IsBitrateReady(bitrate *big.Int) (bool, error) {
-	return _Stream.Contract.IsBitrateReady(&_Stream.CallOpts, bitrate)
+// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
+func (_Stream *StreamCallerSession) IsBitrateTranscoded(bitrate *big.Int) (bool, error) {
+	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, bitrate)
 }
 
 // IsChunk is a free data retrieval call binding the contract method 0x1bb62fc4.
@@ -582,30 +608,30 @@ func (_Stream *StreamCallerSession) IsChunk(arg0 *big.Int) (bool, error) {
 	return _Stream.Contract.IsChunk(&_Stream.CallOpts, arg0)
 }
 
-// IsStreamReady is a free data retrieval call binding the contract method 0xdb85e551.
+// IsTranscodingDone is a free data retrieval call binding the contract method 0xfc1028bc.
 //
-// Solidity: function isStreamReady() constant returns(bool)
-func (_Stream *StreamCaller) IsStreamReady(opts *bind.CallOpts) (bool, error) {
+// Solidity: function isTranscodingDone() constant returns(bool)
+func (_Stream *StreamCaller) IsTranscodingDone(opts *bind.CallOpts) (bool, error) {
 	var (
 		ret0 = new(bool)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "isStreamReady")
+	err := _Stream.contract.Call(opts, out, "isTranscodingDone")
 	return *ret0, err
 }
 
-// IsStreamReady is a free data retrieval call binding the contract method 0xdb85e551.
+// IsTranscodingDone is a free data retrieval call binding the contract method 0xfc1028bc.
 //
-// Solidity: function isStreamReady() constant returns(bool)
-func (_Stream *StreamSession) IsStreamReady() (bool, error) {
-	return _Stream.Contract.IsStreamReady(&_Stream.CallOpts)
+// Solidity: function isTranscodingDone() constant returns(bool)
+func (_Stream *StreamSession) IsTranscodingDone() (bool, error) {
+	return _Stream.Contract.IsTranscodingDone(&_Stream.CallOpts)
 }
 
-// IsStreamReady is a free data retrieval call binding the contract method 0xdb85e551.
+// IsTranscodingDone is a free data retrieval call binding the contract method 0xfc1028bc.
 //
-// Solidity: function isStreamReady() constant returns(bool)
-func (_Stream *StreamCallerSession) IsStreamReady() (bool, error) {
-	return _Stream.Contract.IsStreamReady(&_Stream.CallOpts)
+// Solidity: function isTranscodingDone() constant returns(bool)
+func (_Stream *StreamCallerSession) IsTranscodingDone() (bool, error) {
+	return _Stream.Contract.IsTranscodingDone(&_Stream.CallOpts)
 }
 
 // Manager is a free data retrieval call binding the contract method 0x481c6a75.
@@ -636,27 +662,37 @@ func (_Stream *StreamCallerSession) Manager() (common.Address, error) {
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required)
-func (_Stream *StreamCaller) OutStreams(opts *bind.CallOpts, arg0 *big.Int) (bool, error) {
-	var (
-		ret0 = new(bool)
-	)
-	out := ret0
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+func (_Stream *StreamCaller) OutStreams(opts *bind.CallOpts, arg0 *big.Int) (struct {
+	Required        bool
+	ValidatedChunks *big.Int
+}, error) {
+	ret := new(struct {
+		Required        bool
+		ValidatedChunks *big.Int
+	})
+	out := ret
 	err := _Stream.contract.Call(opts, out, "outStreams", arg0)
-	return *ret0, err
+	return *ret, err
 }
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required)
-func (_Stream *StreamSession) OutStreams(arg0 *big.Int) (bool, error) {
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+func (_Stream *StreamSession) OutStreams(arg0 *big.Int) (struct {
+	Required        bool
+	ValidatedChunks *big.Int
+}, error) {
 	return _Stream.Contract.OutStreams(&_Stream.CallOpts, arg0)
 }
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required)
-func (_Stream *StreamCallerSession) OutStreams(arg0 *big.Int) (bool, error) {
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+func (_Stream *StreamCallerSession) OutStreams(arg0 *big.Int) (struct {
+	Required        bool
+	ValidatedChunks *big.Int
+}, error) {
 	return _Stream.Contract.OutStreams(&_Stream.CallOpts, arg0)
 }
 
@@ -684,32 +720,6 @@ func (_Stream *StreamSession) RefundAllowed() (bool, error) {
 // Solidity: function refundAllowed() constant returns(bool)
 func (_Stream *StreamCallerSession) RefundAllowed() (bool, error) {
 	return _Stream.Contract.RefundAllowed(&_Stream.CallOpts)
-}
-
-// StreamId is a free data retrieval call binding the contract method 0xf4408e4b.
-//
-// Solidity: function streamId() constant returns(uint256)
-func (_Stream *StreamCaller) StreamId(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _Stream.contract.Call(opts, out, "streamId")
-	return *ret0, err
-}
-
-// StreamId is a free data retrieval call binding the contract method 0xf4408e4b.
-//
-// Solidity: function streamId() constant returns(uint256)
-func (_Stream *StreamSession) StreamId() (*big.Int, error) {
-	return _Stream.Contract.StreamId(&_Stream.CallOpts)
-}
-
-// StreamId is a free data retrieval call binding the contract method 0xf4408e4b.
-//
-// Solidity: function streamId() constant returns(uint256)
-func (_Stream *StreamCallerSession) StreamId() (*big.Int, error) {
-	return _Stream.Contract.StreamId(&_Stream.CallOpts)
 }
 
 // AddInputChunkId is a paid mutator transaction binding the contract method 0x63baa266.
@@ -752,6 +762,27 @@ func (_Stream *StreamSession) Deposit() (*types.Transaction, error) {
 // Solidity: function deposit() returns()
 func (_Stream *StreamTransactorSession) Deposit() (*types.Transaction, error) {
 	return _Stream.Contract.Deposit(&_Stream.TransactOpts)
+}
+
+// EndStream is a paid mutator transaction binding the contract method 0xbb57a5ed.
+//
+// Solidity: function endStream() returns()
+func (_Stream *StreamTransactor) EndStream(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Stream.contract.Transact(opts, "endStream")
+}
+
+// EndStream is a paid mutator transaction binding the contract method 0xbb57a5ed.
+//
+// Solidity: function endStream() returns()
+func (_Stream *StreamSession) EndStream() (*types.Transaction, error) {
+	return _Stream.Contract.EndStream(&_Stream.TransactOpts)
+}
+
+// EndStream is a paid mutator transaction binding the contract method 0xbb57a5ed.
+//
+// Solidity: function endStream() returns()
+func (_Stream *StreamTransactorSession) EndStream() (*types.Transaction, error) {
+	return _Stream.Contract.EndStream(&_Stream.TransactOpts)
 }
 
 // Refund is a paid mutator transaction binding the contract method 0x590e1ae3.
@@ -1487,10 +1518,15 @@ type StreamDeposited struct {
 
 // FilterDeposited is a free log retrieval operation binding the contract event 0x2a89b2e3d580398d6dc2db5e0f336b52602bbaa51afa9bb5cdf59239cf0d2bea.
 //
-// Solidity: event Deposited(uint256 weiAmount)
-func (_Stream *StreamFilterer) FilterDeposited(opts *bind.FilterOpts) (*StreamDepositedIterator, error) {
+// Solidity: event Deposited(uint256 indexed weiAmount)
+func (_Stream *StreamFilterer) FilterDeposited(opts *bind.FilterOpts, weiAmount []*big.Int) (*StreamDepositedIterator, error) {
 
-	logs, sub, err := _Stream.contract.FilterLogs(opts, "Deposited")
+	var weiAmountRule []interface{}
+	for _, weiAmountItem := range weiAmount {
+		weiAmountRule = append(weiAmountRule, weiAmountItem)
+	}
+
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "Deposited", weiAmountRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1499,10 +1535,15 @@ func (_Stream *StreamFilterer) FilterDeposited(opts *bind.FilterOpts) (*StreamDe
 
 // WatchDeposited is a free log subscription operation binding the contract event 0x2a89b2e3d580398d6dc2db5e0f336b52602bbaa51afa9bb5cdf59239cf0d2bea.
 //
-// Solidity: event Deposited(uint256 weiAmount)
-func (_Stream *StreamFilterer) WatchDeposited(opts *bind.WatchOpts, sink chan<- *StreamDeposited) (event.Subscription, error) {
+// Solidity: event Deposited(uint256 indexed weiAmount)
+func (_Stream *StreamFilterer) WatchDeposited(opts *bind.WatchOpts, sink chan<- *StreamDeposited, weiAmount []*big.Int) (event.Subscription, error) {
 
-	logs, sub, err := _Stream.contract.WatchLogs(opts, "Deposited")
+	var weiAmountRule []interface{}
+	for _, weiAmountItem := range weiAmount {
+		weiAmountRule = append(weiAmountRule, weiAmountItem)
+	}
+
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "Deposited", weiAmountRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1534,9 +1575,9 @@ func (_Stream *StreamFilterer) WatchDeposited(opts *bind.WatchOpts, sink chan<- 
 	}), nil
 }
 
-// StreamWithdrawnIterator is returned from FilterWithdrawn and is used to iterate over the raw logs and unpacked data for Withdrawn events raised by the Stream contract.
-type StreamWithdrawnIterator struct {
-	Event *StreamWithdrawn // Event containing the contract specifics and raw log
+// StreamOutOfFundsIterator is returned from FilterOutOfFunds and is used to iterate over the raw logs and unpacked data for OutOfFunds events raised by the Stream contract.
+type StreamOutOfFundsIterator struct {
+	Event *StreamOutOfFunds // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1550,7 +1591,7 @@ type StreamWithdrawnIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StreamWithdrawnIterator) Next() bool {
+func (it *StreamOutOfFundsIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1559,7 +1600,7 @@ func (it *StreamWithdrawnIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StreamWithdrawn)
+			it.Event = new(StreamOutOfFunds)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1574,7 +1615,7 @@ func (it *StreamWithdrawnIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StreamWithdrawn)
+		it.Event = new(StreamOutOfFunds)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1590,52 +1631,40 @@ func (it *StreamWithdrawnIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StreamWithdrawnIterator) Error() error {
+func (it *StreamOutOfFundsIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StreamWithdrawnIterator) Close() error {
+func (it *StreamOutOfFundsIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StreamWithdrawn represents a Withdrawn event raised by the Stream contract.
-type StreamWithdrawn struct {
-	Claimant  common.Address
-	WeiAmount *big.Int
-	Raw       types.Log // Blockchain specific contextual infos
+// StreamOutOfFunds represents a OutOfFunds event raised by the Stream contract.
+type StreamOutOfFunds struct {
+	Raw types.Log // Blockchain specific contextual infos
 }
 
-// FilterWithdrawn is a free log retrieval operation binding the contract event 0x7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d5.
+// FilterOutOfFunds is a free log retrieval operation binding the contract event 0x5cc4d4e2397f909efdc05489f71c523c59913a6ffde292799faaca096635e16d.
 //
-// Solidity: event Withdrawn(address indexed claimant, uint256 weiAmount)
-func (_Stream *StreamFilterer) FilterWithdrawn(opts *bind.FilterOpts, claimant []common.Address) (*StreamWithdrawnIterator, error) {
+// Solidity: event OutOfFunds()
+func (_Stream *StreamFilterer) FilterOutOfFunds(opts *bind.FilterOpts) (*StreamOutOfFundsIterator, error) {
 
-	var claimantRule []interface{}
-	for _, claimantItem := range claimant {
-		claimantRule = append(claimantRule, claimantItem)
-	}
-
-	logs, sub, err := _Stream.contract.FilterLogs(opts, "Withdrawn", claimantRule)
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "OutOfFunds")
 	if err != nil {
 		return nil, err
 	}
-	return &StreamWithdrawnIterator{contract: _Stream.contract, event: "Withdrawn", logs: logs, sub: sub}, nil
+	return &StreamOutOfFundsIterator{contract: _Stream.contract, event: "OutOfFunds", logs: logs, sub: sub}, nil
 }
 
-// WatchWithdrawn is a free log subscription operation binding the contract event 0x7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d5.
+// WatchOutOfFunds is a free log subscription operation binding the contract event 0x5cc4d4e2397f909efdc05489f71c523c59913a6ffde292799faaca096635e16d.
 //
-// Solidity: event Withdrawn(address indexed claimant, uint256 weiAmount)
-func (_Stream *StreamFilterer) WatchWithdrawn(opts *bind.WatchOpts, sink chan<- *StreamWithdrawn, claimant []common.Address) (event.Subscription, error) {
+// Solidity: event OutOfFunds()
+func (_Stream *StreamFilterer) WatchOutOfFunds(opts *bind.WatchOpts, sink chan<- *StreamOutOfFunds) (event.Subscription, error) {
 
-	var claimantRule []interface{}
-	for _, claimantItem := range claimant {
-		claimantRule = append(claimantRule, claimantItem)
-	}
-
-	logs, sub, err := _Stream.contract.WatchLogs(opts, "Withdrawn", claimantRule)
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "OutOfFunds")
 	if err != nil {
 		return nil, err
 	}
@@ -1645,8 +1674,130 @@ func (_Stream *StreamFilterer) WatchWithdrawn(opts *bind.WatchOpts, sink chan<- 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StreamWithdrawn)
-				if err := _Stream.contract.UnpackLog(event, "Withdrawn", log); err != nil {
+				event := new(StreamOutOfFunds)
+				if err := _Stream.contract.UnpackLog(event, "OutOfFunds", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// StreamRefundedIterator is returned from FilterRefunded and is used to iterate over the raw logs and unpacked data for Refunded events raised by the Stream contract.
+type StreamRefundedIterator struct {
+	Event *StreamRefunded // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *StreamRefundedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(StreamRefunded)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(StreamRefunded)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *StreamRefundedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *StreamRefundedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// StreamRefunded represents a Refunded event raised by the Stream contract.
+type StreamRefunded struct {
+	WeiAmount *big.Int
+	Raw       types.Log // Blockchain specific contextual infos
+}
+
+// FilterRefunded is a free log retrieval operation binding the contract event 0x3d2a04f53164bedf9a8a46353305d6b2d2261410406df3b41f99ce6489dc003c.
+//
+// Solidity: event Refunded(uint256 weiAmount)
+func (_Stream *StreamFilterer) FilterRefunded(opts *bind.FilterOpts) (*StreamRefundedIterator, error) {
+
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "Refunded")
+	if err != nil {
+		return nil, err
+	}
+	return &StreamRefundedIterator{contract: _Stream.contract, event: "Refunded", logs: logs, sub: sub}, nil
+}
+
+// WatchRefunded is a free log subscription operation binding the contract event 0x3d2a04f53164bedf9a8a46353305d6b2d2261410406df3b41f99ce6489dc003c.
+//
+// Solidity: event Refunded(uint256 weiAmount)
+func (_Stream *StreamFilterer) WatchRefunded(opts *bind.WatchOpts, sink chan<- *StreamRefunded) (event.Subscription, error) {
+
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "Refunded")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(StreamRefunded)
+				if err := _Stream.contract.UnpackLog(event, "Refunded", log); err != nil {
 					return err
 				}
 				event.Raw = log
