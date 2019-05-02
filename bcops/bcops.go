@@ -2,6 +2,7 @@ package bcops
 
 import (
 	"context"
+	"fmt"
 	"io/ioutil"
 	"math/big"
 	"math/rand"
@@ -16,6 +17,14 @@ func GetBCAuth(client *ethclient.Client, privKey *keystore.Key) (*bind.TransactO
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		return nil, err
+	}
+
+	if client == nil {
+		return nil, fmt.Errorf("eth client required")
+	}
+
+	if privKey == nil {
+		return nil, fmt.Errorf("private key required")
 	}
 
 	auth := bind.NewKeyedTransactor(privKey.PrivateKey)
