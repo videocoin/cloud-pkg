@@ -112,13 +112,17 @@ func (m *WorkerMux) Run() error {
 }
 
 func (m *WorkerMux) Close() error {
-	m.conn.Close()
-
-	for _, c := range m.consumers {
-		go c.Ch.Close()
+	for name, c := range m.consumers {
+		err := c.Ch.Close()
+		if err != nil {
+			m.Logger.Errorf("failed to close consumer %s: %s", name, err)
+		}
 	}
 
-	m.conn.Close()
+	err := m.conn.Close()
+	if err != nil {
+		m.Logger.Errorf("failed to close connection: %s", err)
+	}
 
 	return nil
 }

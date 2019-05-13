@@ -34,8 +34,8 @@ func DefaultClientDialOpts(logger *logrus.Entry) []grpc.DialOption {
 			)),
 		),
 		grpc.WithKeepaliveParams(keepalive.ClientParameters{
-			Time:                time.Second * 5,
-			Timeout:             time.Second * 5,
+			Time:                time.Second * 10,
+			Timeout:             time.Second * 10,
 			PermitWithoutStream: true,
 		}),
 	}
@@ -68,8 +68,8 @@ func ClientDialOptsWithRetry(logger *logrus.Entry) []grpc.DialOption {
 			)),
 		),
 		grpc.WithKeepaliveParams(keepalive.ClientParameters{
-			Time:                time.Second * 5,
-			Timeout:             time.Second * 5,
+			Time:                time.Second * 10,
+			Timeout:             time.Second * 10,
 			PermitWithoutStream: true,
 		}),
 	}
