@@ -13,11 +13,6 @@ var (
 	ErrInvalidToken  = errors.New("invalid token")
 )
 
-type JWTClaims struct {
-	UserID string `json:"aid"`
-	jwt.StandardClaims
-}
-
 func AuthFromContext(ctx context.Context) (context.Context, error) {
 	secret, ok := SecretKeyFromContext(ctx)
 	if !ok {
@@ -29,7 +24,7 @@ func AuthFromContext(ctx context.Context) (context.Context, error) {
 		return ctx, ErrInvalidToken
 	}
 
-	t, err := jwt.ParseWithClaims(jwtToken, &JWTClaims{}, func(t *jwt.Token) (interface{}, error) {
+	t, err := jwt.ParseWithClaims(jwtToken, &jwt.StandardClaims{}, func(t *jwt.Token) (interface{}, error) {
 		return []byte(secret), nil
 	})
 
@@ -41,7 +36,7 @@ func AuthFromContext(ctx context.Context) (context.Context, error) {
 		return ctx, ErrInvalidToken
 	}
 
-	ctx = NewContextWithUserID(ctx, t.Claims.(*JWTClaims).UserID)
+	ctx = NewContextWithUserID(ctx, t.Claims.(*jwt.StandardClaims).Subject)
 
 	return ctx, nil
 }
