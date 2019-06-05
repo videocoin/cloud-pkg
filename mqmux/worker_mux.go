@@ -152,6 +152,32 @@ func (m *WorkerMux) Publish(name string, message interface{}) error {
 	return err
 }
 
+func (m *WorkerMux) PublishX(name string, message interface{}, headers amqp.Table) error {
+	p, ok := m.publishers[name]
+	if !ok {
+		return errors.New("unknown publisher")
+	}
+
+	body, err := json.Marshal(message)
+	if err != nil {
+		return err
+	}
+
+	err = p.Ch.Publish(
+		"",       // exchange
+		p.Q.Name, // routing key
+		false,    // mandatory
+		false,
+		amqp.Publishing{
+			DeliveryMode: amqp.Persistent,
+			ContentType:  "application/json",
+			Body:         body,
+			Headers:      headers,
+		})
+
+	return err
+}
+
 func (m *WorkerMux) consume(name string, c *WorkerConsumer) error {
 	l := m.Logger.WithField("consumer", name)
 	l.Info("starting consumer")

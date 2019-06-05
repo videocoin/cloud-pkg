@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/VideoCoin/cloud-api v0.0.0-20190523062553-b30ef1406303
-	github.com/VideoCoin/go-videocoin v0.0.0-20190502173438-f0f47eddff0d
+	//github.com/VideoCoin/go-videocoin v0.0.0-20190502173438-f0f47eddff0d
 	github.com/allegro/bigcache v1.2.0 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20190522184417-004c259faaeb // indirect
 	github.com/btcsuite/btcd v0.0.0-20190523000118-16327141da8c // indirect
