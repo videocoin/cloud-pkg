@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/textproto"
 
-	"github.com/VideoCoin/cloud-api/rpc"
+	"github.com/videocoin/cloud-api/rpc"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
