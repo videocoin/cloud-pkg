@@ -7,12 +7,12 @@ import (
 	"math/big"
 	"strings"
 
-	ethereum "github.com/VideoCoin/go-videocoin"
-	"github.com/VideoCoin/go-videocoin/accounts/abi"
-	"github.com/VideoCoin/go-videocoin/accounts/abi/bind"
-	"github.com/VideoCoin/go-videocoin/common"
-	"github.com/VideoCoin/go-videocoin/core/types"
-	"github.com/VideoCoin/go-videocoin/event"
+	ethereum "github.com/videocoin/go-videocoin"
+	"github.com/videocoin/go-videocoin/accounts/abi"
+	"github.com/videocoin/go-videocoin/accounts/abi/bind"
+	"github.com/videocoin/go-videocoin/common"
+	"github.com/videocoin/go-videocoin/core/types"
+	"github.com/videocoin/go-videocoin/event"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
