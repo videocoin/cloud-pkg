@@ -8,11 +8,11 @@ import (
 	"strings"
 
 	ethereum "github.com/videocoin/go-videocoin"
-	"github.com/videocoin/go-videocoin/accounts/abi"
-	"github.com/videocoin/go-videocoin/accounts/abi/bind"
-	"github.com/videocoin/go-videocoin/common"
-	"github.com/videocoin/go-videocoin/core/types"
-	"github.com/videocoin/go-videocoin/event"
+	"github.com/ethereum/go-ethereum/accounts/abi"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/ethereum/go-ethereum/event"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
