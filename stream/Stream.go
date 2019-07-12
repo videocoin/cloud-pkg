@@ -28,7 +28,7 @@ var (
 )
 
 // StreamABI is the input ABI used to generate the binding from.
-const StreamABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"client\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ended\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBitrates\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"isChunk\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getCandidateProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"refundAllowed\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"hasValidProof\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"getOutChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"addInputChunkId\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunkCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"},{\"name\":\"outChunkId\",\"type\":\"uint256\"}],\"name\":\"submitProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getProofCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"}],\"name\":\"isBitrateTranscoded\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"RTMP\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"id\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"endStream\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"scrapProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getValidProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"validator\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"outStreams\",\"outputs\":[{\"name\":\"required\",\"type\":\"bool\"},{\"name\":\"validatedChunks\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"bitrate\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"validateProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isTranscodingDone\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"},{\"name\":\"client\",\"type\":\"address\"},{\"name\":\"chunks\",\"type\":\"uint256[]\"},{\"name\":\"bitrates\",\"type\":\"uint256[]\"},{\"name\":\"rtmp\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofSubmited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"ChunkProofValidated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"bitrate\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofScrapped\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Refunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"AccountFunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"OutOfFunds\",\"type\":\"event\"}]"
+const StreamABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"getprofiles\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"client\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ended\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"isChunk\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getCandidateProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"wattage\",\"type\":\"uint256[]\"}],\"name\":\"addInputChunkId\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getProfileCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"refundAllowed\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"hasValidProof\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"}],\"name\":\"getOutChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunkCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"},{\"name\":\"outChunkId\",\"type\":\"uint256\"}],\"name\":\"submitProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getProofCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"}],\"name\":\"isBitrateTranscoded\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"id\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"endStream\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"scrapProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"getValidProof\",\"outputs\":[{\"name\":\"miner\",\"type\":\"address\"},{\"name\":\"validator\",\"type\":\"address\"},{\"name\":\"outputChunkId\",\"type\":\"uint256\"},{\"name\":\"proof\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"outStreams\",\"outputs\":[{\"name\":\"required\",\"type\":\"bool\"},{\"name\":\"index\",\"type\":\"uint256\"},{\"name\":\"validatedChunks\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getInChunks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"profile\",\"type\":\"uint256\"},{\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"validateProof\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"wattages\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isTranscodingDone\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"},{\"name\":\"client\",\"type\":\"address\"},{\"name\":\"profiles\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"profile\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofSubmited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"profile\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"}],\"name\":\"ChunkProofValidated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"profile\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"chunkId\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"ChunkProofScrapped\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"Refunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"weiAmount\",\"type\":\"uint256\"}],\"name\":\"AccountFunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"OutOfFunds\",\"type\":\"event\"}]"
 
 // Stream is an auto generated Go binding around an Ethereum contract.
 type Stream struct {
@@ -172,32 +172,6 @@ func (_Stream *StreamTransactorRaw) Transact(opts *bind.TransactOpts, method str
 	return _Stream.Contract.contract.Transact(opts, method, params...)
 }
 
-// RTMP is a free data retrieval call binding the contract method 0x9ee21905.
-//
-// Solidity: function RTMP() constant returns(string)
-func (_Stream *StreamCaller) RTMP(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _Stream.contract.Call(opts, out, "RTMP")
-	return *ret0, err
-}
-
-// RTMP is a free data retrieval call binding the contract method 0x9ee21905.
-//
-// Solidity: function RTMP() constant returns(string)
-func (_Stream *StreamSession) RTMP() (string, error) {
-	return _Stream.Contract.RTMP(&_Stream.CallOpts)
-}
-
-// RTMP is a free data retrieval call binding the contract method 0x9ee21905.
-//
-// Solidity: function RTMP() constant returns(string)
-func (_Stream *StreamCallerSession) RTMP() (string, error) {
-	return _Stream.Contract.RTMP(&_Stream.CallOpts)
-}
-
 // Client is a free data retrieval call binding the contract method 0x109e94cf.
 //
 // Solidity: function client() constant returns(address)
@@ -250,36 +224,10 @@ func (_Stream *StreamCallerSession) Ended() (bool, error) {
 	return _Stream.Contract.Ended(&_Stream.CallOpts)
 }
 
-// GetBitrates is a free data retrieval call binding the contract method 0x14cc12d9.
-//
-// Solidity: function getBitrates() constant returns(uint256[])
-func (_Stream *StreamCaller) GetBitrates(opts *bind.CallOpts) ([]*big.Int, error) {
-	var (
-		ret0 = new([]*big.Int)
-	)
-	out := ret0
-	err := _Stream.contract.Call(opts, out, "getBitrates")
-	return *ret0, err
-}
-
-// GetBitrates is a free data retrieval call binding the contract method 0x14cc12d9.
-//
-// Solidity: function getBitrates() constant returns(uint256[])
-func (_Stream *StreamSession) GetBitrates() ([]*big.Int, error) {
-	return _Stream.Contract.GetBitrates(&_Stream.CallOpts)
-}
-
-// GetBitrates is a free data retrieval call binding the contract method 0x14cc12d9.
-//
-// Solidity: function getBitrates() constant returns(uint256[])
-func (_Stream *StreamCallerSession) GetBitrates() ([]*big.Int, error) {
-	return _Stream.Contract.GetBitrates(&_Stream.CallOpts)
-}
-
 // GetCandidateProof is a free data retrieval call binding the contract method 0x2f750f20.
 //
-// Solidity: function getCandidateProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCaller) GetCandidateProof(opts *bind.CallOpts, bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getCandidateProof(uint256 profile, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCaller) GetCandidateProof(opts *bind.CallOpts, profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
@@ -290,30 +238,30 @@ func (_Stream *StreamCaller) GetCandidateProof(opts *bind.CallOpts, bitrate *big
 		Proof         *big.Int
 	})
 	out := ret
-	err := _Stream.contract.Call(opts, out, "getCandidateProof", bitrate, chunkId)
+	err := _Stream.contract.Call(opts, out, "getCandidateProof", profile, chunkId)
 	return *ret, err
 }
 
 // GetCandidateProof is a free data retrieval call binding the contract method 0x2f750f20.
 //
-// Solidity: function getCandidateProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamSession) GetCandidateProof(bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getCandidateProof(uint256 profile, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamSession) GetCandidateProof(profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetCandidateProof(&_Stream.CallOpts, bitrate, chunkId)
+	return _Stream.Contract.GetCandidateProof(&_Stream.CallOpts, profile, chunkId)
 }
 
 // GetCandidateProof is a free data retrieval call binding the contract method 0x2f750f20.
 //
-// Solidity: function getCandidateProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCallerSession) GetCandidateProof(bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getCandidateProof(uint256 profile, uint256 chunkId) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCallerSession) GetCandidateProof(profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetCandidateProof(&_Stream.CallOpts, bitrate, chunkId)
+	return _Stream.Contract.GetCandidateProof(&_Stream.CallOpts, profile, chunkId)
 }
 
 // GetInChunkCount is a free data retrieval call binding the contract method 0x73f93b2a.
@@ -370,34 +318,60 @@ func (_Stream *StreamCallerSession) GetInChunks() ([]*big.Int, error) {
 
 // GetOutChunks is a free data retrieval call binding the contract method 0x62372298.
 //
-// Solidity: function getOutChunks(uint256 bitrate) constant returns(uint256[])
-func (_Stream *StreamCaller) GetOutChunks(opts *bind.CallOpts, bitrate *big.Int) ([]*big.Int, error) {
+// Solidity: function getOutChunks(uint256 profile) constant returns(uint256[])
+func (_Stream *StreamCaller) GetOutChunks(opts *bind.CallOpts, profile *big.Int) ([]*big.Int, error) {
 	var (
 		ret0 = new([]*big.Int)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "getOutChunks", bitrate)
+	err := _Stream.contract.Call(opts, out, "getOutChunks", profile)
 	return *ret0, err
 }
 
 // GetOutChunks is a free data retrieval call binding the contract method 0x62372298.
 //
-// Solidity: function getOutChunks(uint256 bitrate) constant returns(uint256[])
-func (_Stream *StreamSession) GetOutChunks(bitrate *big.Int) ([]*big.Int, error) {
-	return _Stream.Contract.GetOutChunks(&_Stream.CallOpts, bitrate)
+// Solidity: function getOutChunks(uint256 profile) constant returns(uint256[])
+func (_Stream *StreamSession) GetOutChunks(profile *big.Int) ([]*big.Int, error) {
+	return _Stream.Contract.GetOutChunks(&_Stream.CallOpts, profile)
 }
 
 // GetOutChunks is a free data retrieval call binding the contract method 0x62372298.
 //
-// Solidity: function getOutChunks(uint256 bitrate) constant returns(uint256[])
-func (_Stream *StreamCallerSession) GetOutChunks(bitrate *big.Int) ([]*big.Int, error) {
-	return _Stream.Contract.GetOutChunks(&_Stream.CallOpts, bitrate)
+// Solidity: function getOutChunks(uint256 profile) constant returns(uint256[])
+func (_Stream *StreamCallerSession) GetOutChunks(profile *big.Int) ([]*big.Int, error) {
+	return _Stream.Contract.GetOutChunks(&_Stream.CallOpts, profile)
+}
+
+// GetProfileCount is a free data retrieval call binding the contract method 0x3697611a.
+//
+// Solidity: function getProfileCount() constant returns(uint256)
+func (_Stream *StreamCaller) GetProfileCount(opts *bind.CallOpts) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Stream.contract.Call(opts, out, "getProfileCount")
+	return *ret0, err
+}
+
+// GetProfileCount is a free data retrieval call binding the contract method 0x3697611a.
+//
+// Solidity: function getProfileCount() constant returns(uint256)
+func (_Stream *StreamSession) GetProfileCount() (*big.Int, error) {
+	return _Stream.Contract.GetProfileCount(&_Stream.CallOpts)
+}
+
+// GetProfileCount is a free data retrieval call binding the contract method 0x3697611a.
+//
+// Solidity: function getProfileCount() constant returns(uint256)
+func (_Stream *StreamCallerSession) GetProfileCount() (*big.Int, error) {
+	return _Stream.Contract.GetProfileCount(&_Stream.CallOpts)
 }
 
 // GetProof is a free data retrieval call binding the contract method 0x28cc413a.
 //
-// Solidity: function getProof(uint256 bitrate, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCaller) GetProof(opts *bind.CallOpts, bitrate *big.Int, chunkId *big.Int, idx *big.Int) (struct {
+// Solidity: function getProof(uint256 profile, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCaller) GetProof(opts *bind.CallOpts, profile *big.Int, chunkId *big.Int, idx *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
@@ -408,62 +382,62 @@ func (_Stream *StreamCaller) GetProof(opts *bind.CallOpts, bitrate *big.Int, chu
 		Proof         *big.Int
 	})
 	out := ret
-	err := _Stream.contract.Call(opts, out, "getProof", bitrate, chunkId, idx)
+	err := _Stream.contract.Call(opts, out, "getProof", profile, chunkId, idx)
 	return *ret, err
 }
 
 // GetProof is a free data retrieval call binding the contract method 0x28cc413a.
 //
-// Solidity: function getProof(uint256 bitrate, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamSession) GetProof(bitrate *big.Int, chunkId *big.Int, idx *big.Int) (struct {
+// Solidity: function getProof(uint256 profile, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamSession) GetProof(profile *big.Int, chunkId *big.Int, idx *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetProof(&_Stream.CallOpts, bitrate, chunkId, idx)
+	return _Stream.Contract.GetProof(&_Stream.CallOpts, profile, chunkId, idx)
 }
 
 // GetProof is a free data retrieval call binding the contract method 0x28cc413a.
 //
-// Solidity: function getProof(uint256 bitrate, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCallerSession) GetProof(bitrate *big.Int, chunkId *big.Int, idx *big.Int) (struct {
+// Solidity: function getProof(uint256 profile, uint256 chunkId, uint256 idx) constant returns(address miner, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCallerSession) GetProof(profile *big.Int, chunkId *big.Int, idx *big.Int) (struct {
 	Miner         common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetProof(&_Stream.CallOpts, bitrate, chunkId, idx)
+	return _Stream.Contract.GetProof(&_Stream.CallOpts, profile, chunkId, idx)
 }
 
 // GetProofCount is a free data retrieval call binding the contract method 0x7b40855d.
 //
-// Solidity: function getProofCount(uint256 bitrate, uint256 chunkId) constant returns(uint256)
-func (_Stream *StreamCaller) GetProofCount(opts *bind.CallOpts, bitrate *big.Int, chunkId *big.Int) (*big.Int, error) {
+// Solidity: function getProofCount(uint256 profile, uint256 chunkId) constant returns(uint256)
+func (_Stream *StreamCaller) GetProofCount(opts *bind.CallOpts, profile *big.Int, chunkId *big.Int) (*big.Int, error) {
 	var (
 		ret0 = new(*big.Int)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "getProofCount", bitrate, chunkId)
+	err := _Stream.contract.Call(opts, out, "getProofCount", profile, chunkId)
 	return *ret0, err
 }
 
 // GetProofCount is a free data retrieval call binding the contract method 0x7b40855d.
 //
-// Solidity: function getProofCount(uint256 bitrate, uint256 chunkId) constant returns(uint256)
-func (_Stream *StreamSession) GetProofCount(bitrate *big.Int, chunkId *big.Int) (*big.Int, error) {
-	return _Stream.Contract.GetProofCount(&_Stream.CallOpts, bitrate, chunkId)
+// Solidity: function getProofCount(uint256 profile, uint256 chunkId) constant returns(uint256)
+func (_Stream *StreamSession) GetProofCount(profile *big.Int, chunkId *big.Int) (*big.Int, error) {
+	return _Stream.Contract.GetProofCount(&_Stream.CallOpts, profile, chunkId)
 }
 
 // GetProofCount is a free data retrieval call binding the contract method 0x7b40855d.
 //
-// Solidity: function getProofCount(uint256 bitrate, uint256 chunkId) constant returns(uint256)
-func (_Stream *StreamCallerSession) GetProofCount(bitrate *big.Int, chunkId *big.Int) (*big.Int, error) {
-	return _Stream.Contract.GetProofCount(&_Stream.CallOpts, bitrate, chunkId)
+// Solidity: function getProofCount(uint256 profile, uint256 chunkId) constant returns(uint256)
+func (_Stream *StreamCallerSession) GetProofCount(profile *big.Int, chunkId *big.Int) (*big.Int, error) {
+	return _Stream.Contract.GetProofCount(&_Stream.CallOpts, profile, chunkId)
 }
 
 // GetValidProof is a free data retrieval call binding the contract method 0xbf032f53.
 //
-// Solidity: function getValidProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCaller) GetValidProof(opts *bind.CallOpts, bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getValidProof(uint256 profile, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCaller) GetValidProof(opts *bind.CallOpts, profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	Validator     common.Address
 	OutputChunkId *big.Int
@@ -476,58 +450,84 @@ func (_Stream *StreamCaller) GetValidProof(opts *bind.CallOpts, bitrate *big.Int
 		Proof         *big.Int
 	})
 	out := ret
-	err := _Stream.contract.Call(opts, out, "getValidProof", bitrate, chunkId)
+	err := _Stream.contract.Call(opts, out, "getValidProof", profile, chunkId)
 	return *ret, err
 }
 
 // GetValidProof is a free data retrieval call binding the contract method 0xbf032f53.
 //
-// Solidity: function getValidProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamSession) GetValidProof(bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getValidProof(uint256 profile, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamSession) GetValidProof(profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	Validator     common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetValidProof(&_Stream.CallOpts, bitrate, chunkId)
+	return _Stream.Contract.GetValidProof(&_Stream.CallOpts, profile, chunkId)
 }
 
 // GetValidProof is a free data retrieval call binding the contract method 0xbf032f53.
 //
-// Solidity: function getValidProof(uint256 bitrate, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
-func (_Stream *StreamCallerSession) GetValidProof(bitrate *big.Int, chunkId *big.Int) (struct {
+// Solidity: function getValidProof(uint256 profile, uint256 chunkId) constant returns(address miner, address validator, uint256 outputChunkId, uint256 proof)
+func (_Stream *StreamCallerSession) GetValidProof(profile *big.Int, chunkId *big.Int) (struct {
 	Miner         common.Address
 	Validator     common.Address
 	OutputChunkId *big.Int
 	Proof         *big.Int
 }, error) {
-	return _Stream.Contract.GetValidProof(&_Stream.CallOpts, bitrate, chunkId)
+	return _Stream.Contract.GetValidProof(&_Stream.CallOpts, profile, chunkId)
+}
+
+// Getprofiles is a free data retrieval call binding the contract method 0x00ca5d92.
+//
+// Solidity: function getprofiles() constant returns(uint256[])
+func (_Stream *StreamCaller) Getprofiles(opts *bind.CallOpts) ([]*big.Int, error) {
+	var (
+		ret0 = new([]*big.Int)
+	)
+	out := ret0
+	err := _Stream.contract.Call(opts, out, "getprofiles")
+	return *ret0, err
+}
+
+// Getprofiles is a free data retrieval call binding the contract method 0x00ca5d92.
+//
+// Solidity: function getprofiles() constant returns(uint256[])
+func (_Stream *StreamSession) Getprofiles() ([]*big.Int, error) {
+	return _Stream.Contract.Getprofiles(&_Stream.CallOpts)
+}
+
+// Getprofiles is a free data retrieval call binding the contract method 0x00ca5d92.
+//
+// Solidity: function getprofiles() constant returns(uint256[])
+func (_Stream *StreamCallerSession) Getprofiles() ([]*big.Int, error) {
+	return _Stream.Contract.Getprofiles(&_Stream.CallOpts)
 }
 
 // HasValidProof is a free data retrieval call binding the contract method 0x4c0b715c.
 //
-// Solidity: function hasValidProof(uint256 bitrate, uint256 chunkId) constant returns(bool)
-func (_Stream *StreamCaller) HasValidProof(opts *bind.CallOpts, bitrate *big.Int, chunkId *big.Int) (bool, error) {
+// Solidity: function hasValidProof(uint256 profile, uint256 chunkId) constant returns(bool)
+func (_Stream *StreamCaller) HasValidProof(opts *bind.CallOpts, profile *big.Int, chunkId *big.Int) (bool, error) {
 	var (
 		ret0 = new(bool)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "hasValidProof", bitrate, chunkId)
+	err := _Stream.contract.Call(opts, out, "hasValidProof", profile, chunkId)
 	return *ret0, err
 }
 
 // HasValidProof is a free data retrieval call binding the contract method 0x4c0b715c.
 //
-// Solidity: function hasValidProof(uint256 bitrate, uint256 chunkId) constant returns(bool)
-func (_Stream *StreamSession) HasValidProof(bitrate *big.Int, chunkId *big.Int) (bool, error) {
-	return _Stream.Contract.HasValidProof(&_Stream.CallOpts, bitrate, chunkId)
+// Solidity: function hasValidProof(uint256 profile, uint256 chunkId) constant returns(bool)
+func (_Stream *StreamSession) HasValidProof(profile *big.Int, chunkId *big.Int) (bool, error) {
+	return _Stream.Contract.HasValidProof(&_Stream.CallOpts, profile, chunkId)
 }
 
 // HasValidProof is a free data retrieval call binding the contract method 0x4c0b715c.
 //
-// Solidity: function hasValidProof(uint256 bitrate, uint256 chunkId) constant returns(bool)
-func (_Stream *StreamCallerSession) HasValidProof(bitrate *big.Int, chunkId *big.Int) (bool, error) {
-	return _Stream.Contract.HasValidProof(&_Stream.CallOpts, bitrate, chunkId)
+// Solidity: function hasValidProof(uint256 profile, uint256 chunkId) constant returns(bool)
+func (_Stream *StreamCallerSession) HasValidProof(profile *big.Int, chunkId *big.Int) (bool, error) {
+	return _Stream.Contract.HasValidProof(&_Stream.CallOpts, profile, chunkId)
 }
 
 // Id is a free data retrieval call binding the contract method 0xaf640d0f.
@@ -558,28 +558,28 @@ func (_Stream *StreamCallerSession) Id() (*big.Int, error) {
 
 // IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
 //
-// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamCaller) IsBitrateTranscoded(opts *bind.CallOpts, bitrate *big.Int) (bool, error) {
+// Solidity: function isBitrateTranscoded(uint256 profile) constant returns(bool)
+func (_Stream *StreamCaller) IsBitrateTranscoded(opts *bind.CallOpts, profile *big.Int) (bool, error) {
 	var (
 		ret0 = new(bool)
 	)
 	out := ret0
-	err := _Stream.contract.Call(opts, out, "isBitrateTranscoded", bitrate)
+	err := _Stream.contract.Call(opts, out, "isBitrateTranscoded", profile)
 	return *ret0, err
 }
 
 // IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
 //
-// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamSession) IsBitrateTranscoded(bitrate *big.Int) (bool, error) {
-	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, bitrate)
+// Solidity: function isBitrateTranscoded(uint256 profile) constant returns(bool)
+func (_Stream *StreamSession) IsBitrateTranscoded(profile *big.Int) (bool, error) {
+	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, profile)
 }
 
 // IsBitrateTranscoded is a free data retrieval call binding the contract method 0x963dce43.
 //
-// Solidity: function isBitrateTranscoded(uint256 bitrate) constant returns(bool)
-func (_Stream *StreamCallerSession) IsBitrateTranscoded(bitrate *big.Int) (bool, error) {
-	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, bitrate)
+// Solidity: function isBitrateTranscoded(uint256 profile) constant returns(bool)
+func (_Stream *StreamCallerSession) IsBitrateTranscoded(profile *big.Int) (bool, error) {
+	return _Stream.Contract.IsBitrateTranscoded(&_Stream.CallOpts, profile)
 }
 
 // IsChunk is a free data retrieval call binding the contract method 0x1bb62fc4.
@@ -662,13 +662,15 @@ func (_Stream *StreamCallerSession) Manager() (common.Address, error) {
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 index, uint256 validatedChunks)
 func (_Stream *StreamCaller) OutStreams(opts *bind.CallOpts, arg0 *big.Int) (struct {
 	Required        bool
+	Index           *big.Int
 	ValidatedChunks *big.Int
 }, error) {
 	ret := new(struct {
 		Required        bool
+		Index           *big.Int
 		ValidatedChunks *big.Int
 	})
 	out := ret
@@ -678,9 +680,10 @@ func (_Stream *StreamCaller) OutStreams(opts *bind.CallOpts, arg0 *big.Int) (str
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 index, uint256 validatedChunks)
 func (_Stream *StreamSession) OutStreams(arg0 *big.Int) (struct {
 	Required        bool
+	Index           *big.Int
 	ValidatedChunks *big.Int
 }, error) {
 	return _Stream.Contract.OutStreams(&_Stream.CallOpts, arg0)
@@ -688,9 +691,10 @@ func (_Stream *StreamSession) OutStreams(arg0 *big.Int) (struct {
 
 // OutStreams is a free data retrieval call binding the contract method 0xc5d0b14c.
 //
-// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 validatedChunks)
+// Solidity: function outStreams(uint256 ) constant returns(bool required, uint256 index, uint256 validatedChunks)
 func (_Stream *StreamCallerSession) OutStreams(arg0 *big.Int) (struct {
 	Required        bool
+	Index           *big.Int
 	ValidatedChunks *big.Int
 }, error) {
 	return _Stream.Contract.OutStreams(&_Stream.CallOpts, arg0)
@@ -722,25 +726,51 @@ func (_Stream *StreamCallerSession) RefundAllowed() (bool, error) {
 	return _Stream.Contract.RefundAllowed(&_Stream.CallOpts)
 }
 
-// AddInputChunkId is a paid mutator transaction binding the contract method 0x63baa266.
+// Wattages is a free data retrieval call binding the contract method 0xeda0ce17.
 //
-// Solidity: function addInputChunkId(uint256 chunkId) returns()
-func (_Stream *StreamTransactor) AddInputChunkId(opts *bind.TransactOpts, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.contract.Transact(opts, "addInputChunkId", chunkId)
+// Solidity: function wattages(uint256 , uint256 ) constant returns(uint256)
+func (_Stream *StreamCaller) Wattages(opts *bind.CallOpts, arg0 *big.Int, arg1 *big.Int) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Stream.contract.Call(opts, out, "wattages", arg0, arg1)
+	return *ret0, err
 }
 
-// AddInputChunkId is a paid mutator transaction binding the contract method 0x63baa266.
+// Wattages is a free data retrieval call binding the contract method 0xeda0ce17.
 //
-// Solidity: function addInputChunkId(uint256 chunkId) returns()
-func (_Stream *StreamSession) AddInputChunkId(chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.AddInputChunkId(&_Stream.TransactOpts, chunkId)
+// Solidity: function wattages(uint256 , uint256 ) constant returns(uint256)
+func (_Stream *StreamSession) Wattages(arg0 *big.Int, arg1 *big.Int) (*big.Int, error) {
+	return _Stream.Contract.Wattages(&_Stream.CallOpts, arg0, arg1)
 }
 
-// AddInputChunkId is a paid mutator transaction binding the contract method 0x63baa266.
+// Wattages is a free data retrieval call binding the contract method 0xeda0ce17.
 //
-// Solidity: function addInputChunkId(uint256 chunkId) returns()
-func (_Stream *StreamTransactorSession) AddInputChunkId(chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.AddInputChunkId(&_Stream.TransactOpts, chunkId)
+// Solidity: function wattages(uint256 , uint256 ) constant returns(uint256)
+func (_Stream *StreamCallerSession) Wattages(arg0 *big.Int, arg1 *big.Int) (*big.Int, error) {
+	return _Stream.Contract.Wattages(&_Stream.CallOpts, arg0, arg1)
+}
+
+// AddInputChunkId is a paid mutator transaction binding the contract method 0x356939ab.
+//
+// Solidity: function addInputChunkId(uint256 chunkId, uint256[] wattage) returns()
+func (_Stream *StreamTransactor) AddInputChunkId(opts *bind.TransactOpts, chunkId *big.Int, wattage []*big.Int) (*types.Transaction, error) {
+	return _Stream.contract.Transact(opts, "addInputChunkId", chunkId, wattage)
+}
+
+// AddInputChunkId is a paid mutator transaction binding the contract method 0x356939ab.
+//
+// Solidity: function addInputChunkId(uint256 chunkId, uint256[] wattage) returns()
+func (_Stream *StreamSession) AddInputChunkId(chunkId *big.Int, wattage []*big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.AddInputChunkId(&_Stream.TransactOpts, chunkId, wattage)
+}
+
+// AddInputChunkId is a paid mutator transaction binding the contract method 0x356939ab.
+//
+// Solidity: function addInputChunkId(uint256 chunkId, uint256[] wattage) returns()
+func (_Stream *StreamTransactorSession) AddInputChunkId(chunkId *big.Int, wattage []*big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.AddInputChunkId(&_Stream.TransactOpts, chunkId, wattage)
 }
 
 // Deposit is a paid mutator transaction binding the contract method 0xd0e30db0.
@@ -808,65 +838,65 @@ func (_Stream *StreamTransactorSession) Refund() (*types.Transaction, error) {
 
 // ScrapProof is a paid mutator transaction binding the contract method 0xbbe58b0c.
 //
-// Solidity: function scrapProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamTransactor) ScrapProof(opts *bind.TransactOpts, bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.contract.Transact(opts, "scrapProof", bitrate, chunkId)
+// Solidity: function scrapProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamTransactor) ScrapProof(opts *bind.TransactOpts, profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.contract.Transact(opts, "scrapProof", profile, chunkId)
 }
 
 // ScrapProof is a paid mutator transaction binding the contract method 0xbbe58b0c.
 //
-// Solidity: function scrapProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamSession) ScrapProof(bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.ScrapProof(&_Stream.TransactOpts, bitrate, chunkId)
+// Solidity: function scrapProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamSession) ScrapProof(profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.ScrapProof(&_Stream.TransactOpts, profile, chunkId)
 }
 
 // ScrapProof is a paid mutator transaction binding the contract method 0xbbe58b0c.
 //
-// Solidity: function scrapProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamTransactorSession) ScrapProof(bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.ScrapProof(&_Stream.TransactOpts, bitrate, chunkId)
+// Solidity: function scrapProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamTransactorSession) ScrapProof(profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.ScrapProof(&_Stream.TransactOpts, profile, chunkId)
 }
 
 // SubmitProof is a paid mutator transaction binding the contract method 0x747f7589.
 //
-// Solidity: function submitProof(uint256 bitrate, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
-func (_Stream *StreamTransactor) SubmitProof(opts *bind.TransactOpts, bitrate *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.contract.Transact(opts, "submitProof", bitrate, chunkId, proof, outChunkId)
+// Solidity: function submitProof(uint256 profile, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
+func (_Stream *StreamTransactor) SubmitProof(opts *bind.TransactOpts, profile *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.contract.Transact(opts, "submitProof", profile, chunkId, proof, outChunkId)
 }
 
 // SubmitProof is a paid mutator transaction binding the contract method 0x747f7589.
 //
-// Solidity: function submitProof(uint256 bitrate, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
-func (_Stream *StreamSession) SubmitProof(bitrate *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.SubmitProof(&_Stream.TransactOpts, bitrate, chunkId, proof, outChunkId)
+// Solidity: function submitProof(uint256 profile, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
+func (_Stream *StreamSession) SubmitProof(profile *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.SubmitProof(&_Stream.TransactOpts, profile, chunkId, proof, outChunkId)
 }
 
 // SubmitProof is a paid mutator transaction binding the contract method 0x747f7589.
 //
-// Solidity: function submitProof(uint256 bitrate, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
-func (_Stream *StreamTransactorSession) SubmitProof(bitrate *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.SubmitProof(&_Stream.TransactOpts, bitrate, chunkId, proof, outChunkId)
+// Solidity: function submitProof(uint256 profile, uint256 chunkId, uint256 proof, uint256 outChunkId) returns()
+func (_Stream *StreamTransactorSession) SubmitProof(profile *big.Int, chunkId *big.Int, proof *big.Int, outChunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.SubmitProof(&_Stream.TransactOpts, profile, chunkId, proof, outChunkId)
 }
 
 // ValidateProof is a paid mutator transaction binding the contract method 0xd78e647f.
 //
-// Solidity: function validateProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamTransactor) ValidateProof(opts *bind.TransactOpts, bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.contract.Transact(opts, "validateProof", bitrate, chunkId)
+// Solidity: function validateProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamTransactor) ValidateProof(opts *bind.TransactOpts, profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.contract.Transact(opts, "validateProof", profile, chunkId)
 }
 
 // ValidateProof is a paid mutator transaction binding the contract method 0xd78e647f.
 //
-// Solidity: function validateProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamSession) ValidateProof(bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.ValidateProof(&_Stream.TransactOpts, bitrate, chunkId)
+// Solidity: function validateProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamSession) ValidateProof(profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.ValidateProof(&_Stream.TransactOpts, profile, chunkId)
 }
 
 // ValidateProof is a paid mutator transaction binding the contract method 0xd78e647f.
 //
-// Solidity: function validateProof(uint256 bitrate, uint256 chunkId) returns()
-func (_Stream *StreamTransactorSession) ValidateProof(bitrate *big.Int, chunkId *big.Int) (*types.Transaction, error) {
-	return _Stream.Contract.ValidateProof(&_Stream.TransactOpts, bitrate, chunkId)
+// Solidity: function validateProof(uint256 profile, uint256 chunkId) returns()
+func (_Stream *StreamTransactorSession) ValidateProof(profile *big.Int, chunkId *big.Int) (*types.Transaction, error) {
+	return _Stream.Contract.ValidateProof(&_Stream.TransactOpts, profile, chunkId)
 }
 
 // StreamAccountFundedIterator is returned from FilterAccountFunded and is used to iterate over the raw logs and unpacked data for AccountFunded events raised by the Stream contract.
@@ -1071,7 +1101,7 @@ func (it *StreamChunkProofScrappedIterator) Close() error {
 
 // StreamChunkProofScrapped represents a ChunkProofScrapped event raised by the Stream contract.
 type StreamChunkProofScrapped struct {
-	Bitrate *big.Int
+	Profile *big.Int
 	ChunkId *big.Int
 	Idx     *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
@@ -1079,12 +1109,12 @@ type StreamChunkProofScrapped struct {
 
 // FilterChunkProofScrapped is a free log retrieval operation binding the contract event 0xb25faf3bb93b5105c8bc184c6af20f251543b1fdd93cd5c6f9f31b13c138b91a.
 //
-// Solidity: event ChunkProofScrapped(uint256 indexed bitrate, uint256 indexed chunkId, uint256 indexed idx)
-func (_Stream *StreamFilterer) FilterChunkProofScrapped(opts *bind.FilterOpts, bitrate []*big.Int, chunkId []*big.Int, idx []*big.Int) (*StreamChunkProofScrappedIterator, error) {
+// Solidity: event ChunkProofScrapped(uint256 indexed profile, uint256 indexed chunkId, uint256 indexed idx)
+func (_Stream *StreamFilterer) FilterChunkProofScrapped(opts *bind.FilterOpts, profile []*big.Int, chunkId []*big.Int, idx []*big.Int) (*StreamChunkProofScrappedIterator, error) {
 
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
@@ -1095,7 +1125,7 @@ func (_Stream *StreamFilterer) FilterChunkProofScrapped(opts *bind.FilterOpts, b
 		idxRule = append(idxRule, idxItem)
 	}
 
-	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofScrapped", bitrateRule, chunkIdRule, idxRule)
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofScrapped", profileRule, chunkIdRule, idxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1104,12 +1134,12 @@ func (_Stream *StreamFilterer) FilterChunkProofScrapped(opts *bind.FilterOpts, b
 
 // WatchChunkProofScrapped is a free log subscription operation binding the contract event 0xb25faf3bb93b5105c8bc184c6af20f251543b1fdd93cd5c6f9f31b13c138b91a.
 //
-// Solidity: event ChunkProofScrapped(uint256 indexed bitrate, uint256 indexed chunkId, uint256 indexed idx)
-func (_Stream *StreamFilterer) WatchChunkProofScrapped(opts *bind.WatchOpts, sink chan<- *StreamChunkProofScrapped, bitrate []*big.Int, chunkId []*big.Int, idx []*big.Int) (event.Subscription, error) {
+// Solidity: event ChunkProofScrapped(uint256 indexed profile, uint256 indexed chunkId, uint256 indexed idx)
+func (_Stream *StreamFilterer) WatchChunkProofScrapped(opts *bind.WatchOpts, sink chan<- *StreamChunkProofScrapped, profile []*big.Int, chunkId []*big.Int, idx []*big.Int) (event.Subscription, error) {
 
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
@@ -1120,7 +1150,7 @@ func (_Stream *StreamFilterer) WatchChunkProofScrapped(opts *bind.WatchOpts, sin
 		idxRule = append(idxRule, idxItem)
 	}
 
-	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofScrapped", bitrateRule, chunkIdRule, idxRule)
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofScrapped", profileRule, chunkIdRule, idxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1222,30 +1252,30 @@ func (it *StreamChunkProofSubmitedIterator) Close() error {
 // StreamChunkProofSubmited represents a ChunkProofSubmited event raised by the Stream contract.
 type StreamChunkProofSubmited struct {
 	ChunkId *big.Int
-	Bitrate *big.Int
+	Profile *big.Int
 	Idx     *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
 }
 
 // FilterChunkProofSubmited is a free log retrieval operation binding the contract event 0xe176ecde2cccccb4849f78f5d9f8378a179f72033c2fc649f90820a324cfaa71.
 //
-// Solidity: event ChunkProofSubmited(uint256 indexed chunkId, uint256 indexed bitrate, uint256 indexed idx)
-func (_Stream *StreamFilterer) FilterChunkProofSubmited(opts *bind.FilterOpts, chunkId []*big.Int, bitrate []*big.Int, idx []*big.Int) (*StreamChunkProofSubmitedIterator, error) {
+// Solidity: event ChunkProofSubmited(uint256 indexed chunkId, uint256 indexed profile, uint256 indexed idx)
+func (_Stream *StreamFilterer) FilterChunkProofSubmited(opts *bind.FilterOpts, chunkId []*big.Int, profile []*big.Int, idx []*big.Int) (*StreamChunkProofSubmitedIterator, error) {
 
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
 		chunkIdRule = append(chunkIdRule, chunkIdItem)
 	}
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var idxRule []interface{}
 	for _, idxItem := range idx {
 		idxRule = append(idxRule, idxItem)
 	}
 
-	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofSubmited", chunkIdRule, bitrateRule, idxRule)
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofSubmited", chunkIdRule, profileRule, idxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1254,23 +1284,23 @@ func (_Stream *StreamFilterer) FilterChunkProofSubmited(opts *bind.FilterOpts, c
 
 // WatchChunkProofSubmited is a free log subscription operation binding the contract event 0xe176ecde2cccccb4849f78f5d9f8378a179f72033c2fc649f90820a324cfaa71.
 //
-// Solidity: event ChunkProofSubmited(uint256 indexed chunkId, uint256 indexed bitrate, uint256 indexed idx)
-func (_Stream *StreamFilterer) WatchChunkProofSubmited(opts *bind.WatchOpts, sink chan<- *StreamChunkProofSubmited, chunkId []*big.Int, bitrate []*big.Int, idx []*big.Int) (event.Subscription, error) {
+// Solidity: event ChunkProofSubmited(uint256 indexed chunkId, uint256 indexed profile, uint256 indexed idx)
+func (_Stream *StreamFilterer) WatchChunkProofSubmited(opts *bind.WatchOpts, sink chan<- *StreamChunkProofSubmited, chunkId []*big.Int, profile []*big.Int, idx []*big.Int) (event.Subscription, error) {
 
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
 		chunkIdRule = append(chunkIdRule, chunkIdItem)
 	}
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var idxRule []interface{}
 	for _, idxItem := range idx {
 		idxRule = append(idxRule, idxItem)
 	}
 
-	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofSubmited", chunkIdRule, bitrateRule, idxRule)
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofSubmited", chunkIdRule, profileRule, idxRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1371,26 +1401,26 @@ func (it *StreamChunkProofValidatedIterator) Close() error {
 
 // StreamChunkProofValidated represents a ChunkProofValidated event raised by the Stream contract.
 type StreamChunkProofValidated struct {
-	Bitrate *big.Int
+	Profile *big.Int
 	ChunkId *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
 }
 
 // FilterChunkProofValidated is a free log retrieval operation binding the contract event 0x6e0dd2be4d72dbf12213042a47491e605ec38b66d076e6f74e9f458373080e37.
 //
-// Solidity: event ChunkProofValidated(uint256 indexed bitrate, uint256 indexed chunkId)
-func (_Stream *StreamFilterer) FilterChunkProofValidated(opts *bind.FilterOpts, bitrate []*big.Int, chunkId []*big.Int) (*StreamChunkProofValidatedIterator, error) {
+// Solidity: event ChunkProofValidated(uint256 indexed profile, uint256 indexed chunkId)
+func (_Stream *StreamFilterer) FilterChunkProofValidated(opts *bind.FilterOpts, profile []*big.Int, chunkId []*big.Int) (*StreamChunkProofValidatedIterator, error) {
 
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
 		chunkIdRule = append(chunkIdRule, chunkIdItem)
 	}
 
-	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofValidated", bitrateRule, chunkIdRule)
+	logs, sub, err := _Stream.contract.FilterLogs(opts, "ChunkProofValidated", profileRule, chunkIdRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1399,19 +1429,19 @@ func (_Stream *StreamFilterer) FilterChunkProofValidated(opts *bind.FilterOpts, 
 
 // WatchChunkProofValidated is a free log subscription operation binding the contract event 0x6e0dd2be4d72dbf12213042a47491e605ec38b66d076e6f74e9f458373080e37.
 //
-// Solidity: event ChunkProofValidated(uint256 indexed bitrate, uint256 indexed chunkId)
-func (_Stream *StreamFilterer) WatchChunkProofValidated(opts *bind.WatchOpts, sink chan<- *StreamChunkProofValidated, bitrate []*big.Int, chunkId []*big.Int) (event.Subscription, error) {
+// Solidity: event ChunkProofValidated(uint256 indexed profile, uint256 indexed chunkId)
+func (_Stream *StreamFilterer) WatchChunkProofValidated(opts *bind.WatchOpts, sink chan<- *StreamChunkProofValidated, profile []*big.Int, chunkId []*big.Int) (event.Subscription, error) {
 
-	var bitrateRule []interface{}
-	for _, bitrateItem := range bitrate {
-		bitrateRule = append(bitrateRule, bitrateItem)
+	var profileRule []interface{}
+	for _, profileItem := range profile {
+		profileRule = append(profileRule, profileItem)
 	}
 	var chunkIdRule []interface{}
 	for _, chunkIdItem := range chunkId {
 		chunkIdRule = append(chunkIdRule, chunkIdItem)
 	}
 
-	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofValidated", bitrateRule, chunkIdRule)
+	logs, sub, err := _Stream.contract.WatchLogs(opts, "ChunkProofValidated", profileRule, chunkIdRule)
 	if err != nil {
 		return nil, err
 	}
