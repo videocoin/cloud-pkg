@@ -36,6 +36,10 @@ func (l MWLogger) SetPrefix(s string) {
 	// TODO
 }
 
+func (l MWLogger) SetHeader(s string) {
+	// TODO
+}
+
 func (l MWLogger) Prefix() string {
 	// TODO.  Is this even valid?  I'm not sure it can be translated since
 	// logrus uses a Formatter interface.  Which seems to me to probably be
