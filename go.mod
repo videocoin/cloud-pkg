@@ -5,6 +5,7 @@ go 1.12
 require (
 	github.com/allegro/bigcache v1.2.0 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20190607111240-52c2a7864a08 // indirect
+	github.com/bsm/redis-lock v8.0.0+incompatible
 	github.com/btcsuite/btcd v0.0.0-20190605094302-a0d1e3e36d50 // indirect
 	github.com/certifi/gocertifi v0.0.0-20190506164543-d2eda7129713 // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
@@ -12,6 +13,7 @@ require (
 	github.com/ethereum/go-ethereum v1.8.27
 	github.com/evalphobia/logrus_sentry v0.8.2
 	github.com/getsentry/raven-go v0.2.0 // indirect
+	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/gogo/protobuf v1.2.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
