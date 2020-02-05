@@ -27,6 +27,9 @@ var (
 	IDPattern = regexp.MustCompile(`^[a-z0-9][-a-z0-9]{3,48}[a-z0-9]$`)
 	// NamePattern is the project name pattern.
 	NamePattern = regexp.MustCompile(`^projects/[a-z0-9][-a-z0-9]{3,48}[a-z0-9]$`)
+
+	// NameWithWildcard is project name with a wildcard for the project identifier.
+	NameWithWildcard = cstr.JoinWithSeparator(resources.NameSeparator, CollectionID, resources.Wildcard)
 )
 
 // Name returns the project name given a project identifier.
