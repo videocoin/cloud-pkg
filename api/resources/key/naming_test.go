@@ -59,6 +59,44 @@ func TestName(t *testing.T) {
 	}
 }
 
+func TestNameWithWildcard(t *testing.T) {
+	tests := []struct {
+		name            string
+		accEmail, keyID string
+		output          string
+		err             error
+	}{
+		{
+			name:     "invalid account email: id must have at least 3 chars",
+			accEmail: "acc@videocoin-123.vserviceaccount.com",
+			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			output:   "",
+			err:      sa.ErrInvalidEmail,
+		},
+		{
+			name:     "invalid key id",
+			accEmail: "account1@videocoin-123.vserviceaccount.com",
+			keyID:    "a193-4b59-a539-8c06beb2eeb5",
+			output:   "",
+			err:      key.ErrInvalidID,
+		},
+		{
+			name:     "valid account email and key id",
+			accEmail: "account1@videocoin-123.vserviceaccount.com",
+			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			output:   "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			err:      nil,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			output, err := key.NameWithWildcard(test.accEmail, test.keyID)
+			require.Equal(t, test.err, err)
+			require.Equal(t, test.output, output)
+		})
+	}
+}
+
 func TestIDFromName(t *testing.T) {
 	tests := []struct {
 		name    string
@@ -122,6 +160,11 @@ func TestIsValidName(t *testing.T) {
 			name:    "invalid name: invalid key id",
 			keyName: "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/a193-4b59-a539-8c06beb2eeb5",
 			output:  false,
+		},
+		{
+			name:    "valid name wildcard",
+			keyName: "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			output:  true,
 		},
 		{
 			name:    "valid name",

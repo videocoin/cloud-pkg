@@ -19,6 +19,7 @@ require (
 	github.com/getsentry/raven-go v0.2.0 // indirect
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/gogo/protobuf v1.2.1
+	github.com/google/uuid v1.0.0
 	github.com/grafov/m3u8 v0.11.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
@@ -37,6 +38,7 @@ require (
 	github.com/rs/cors v1.6.0 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
+	github.com/stretchr/testify v1.3.0
 	github.com/syndtr/goleveldb v1.0.0 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible

@@ -36,6 +36,35 @@ func TestName(t *testing.T) {
 	}
 }
 
+func TestWildcard(t *testing.T) {
+	tests := []struct {
+		name   string
+		projID string
+		output string
+		err    error
+	}{
+		{
+			name:   "invalid id: starts with a dash",
+			projID: "-123123",
+			output: "",
+			err:    project.ErrInvalidID,
+		},
+		{
+			name:   "valid id: uuid",
+			projID: "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			output: "projects/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			err:    nil,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			output, err := project.Name(test.projID)
+			require.Equal(t, test.err, err)
+			require.Equal(t, test.output, output)
+		})
+	}
+}
+
 func TestIDFromName(t *testing.T) {
 	tests := []struct {
 		name     string

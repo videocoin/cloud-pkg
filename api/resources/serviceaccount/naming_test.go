@@ -47,6 +47,35 @@ func TestName(t *testing.T) {
 	}
 }
 
+func TestNameWildcard(t *testing.T) {
+	tests := []struct {
+		name     string
+		accEmail string
+		output   string
+		err      error
+	}{
+		{
+			name:     "invalid account email: id must have at least 6 chars",
+			accEmail: "acc@videocoin-123.vserviceaccount.com",
+			output:   "",
+			err:      sa.ErrInvalidEmail,
+		},
+		{
+			name:     "valid service account email",
+			accEmail: "account1@videocoin-123.vserviceaccount.com",
+			output:   "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com",
+			err:      nil,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			output, err := sa.NameWithWildcard(test.accEmail)
+			require.Equal(t, test.err, err)
+			require.Equal(t, test.output, output)
+		})
+	}
+}
+
 func TestEmail(t *testing.T) {
 	tests := []struct {
 		name          string
@@ -187,6 +216,11 @@ func TestIsValidName(t *testing.T) {
 			name:   "invalid name: missing @",
 			saName: "projects/videocoin-123/serviceAccounts/account1videocoin-123.vserviceaccount.com",
 			output: false,
+		},
+		{
+			name:   "valid name wildcard",
+			saName: "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com",
+			output: true,
 		},
 		{
 			name:   "valid name",
