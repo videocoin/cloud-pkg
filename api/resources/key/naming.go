@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	guuid "github.com/google/uuid"
-	sa "github.com/videocoin/cloud-pkg/api/resources/serviceaccount"
+	acc "github.com/videocoin/cloud-pkg/api/resources/serviceaccount"
 	cstr "github.com/videocoin/cloud-pkg/strings"
 
 	"github.com/videocoin/cloud-pkg/api/resources"
@@ -50,14 +50,14 @@ func ParseName(name string) (Name, error) {
 // NewName returns the key's name given a project identifier and a
 // service account email.
 func NewName(projID string, accEmail string, keyID string) Name {
-	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(sa.NewName(projID, accEmail)), CollectionID, keyID))
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(acc.NewName(projID, accEmail)), CollectionID, keyID))
 }
 
 // NewNameWildcard returns the service account's key name with a wildcard for
 // the project id. Requests using `-` as a wildcard for the project identifier
 // will infer the project identifier from the account email.
 func NewNameWildcard(accEmail, keyID string) Name {
-	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(sa.NewNameWildcard(accEmail)), CollectionID, keyID))
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(acc.NewNameWildcard(accEmail)), CollectionID, keyID))
 }
 
 // IsValidID reports whether a key identifier is valid.
