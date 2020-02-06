@@ -27,25 +27,32 @@ var (
 	IDPattern = regexp.MustCompile(`^[a-z0-9][-a-z0-9]{3,48}[a-z0-9]$`)
 	// NamePattern is the project name pattern.
 	NamePattern = regexp.MustCompile(`^projects/[a-z0-9][-a-z0-9]{3,48}[a-z0-9]$`)
-
-	// NameWithWildcard is project name with a wildcard for the project identifier.
-	NameWithWildcard = cstr.JoinWithSeparator(resources.NameSeparator, CollectionID, resources.Wildcard)
 )
 
-// Name returns the project name given a project identifier.
-func Name(ID string) (string, error) {
-	if ok := IsValidID(ID); !ok {
-		return "", ErrInvalidID
-	}
-	return cstr.JoinWithSeparator(resources.NameSeparator, CollectionID, ID), nil
+// Name is the project's name.
+type Name string
+
+// ID returns the project's email.
+func (n Name) ID() string {
+	return strings.SplitN(string(n), resources.NameSeparator, 2)[1]
 }
 
-// IDFromName derives the project identifier from its name.
-func IDFromName(name string) (string, error) {
-	if ok := IsValidName(name); !ok {
+// ParseName parses a project name.
+func ParseName(name string) (Name, error) {
+	if ok := isValidName(name); !ok {
 		return "", ErrInvalidName
 	}
-	return strings.SplitN(name, resources.NameSeparator, 2)[1], nil
+	return Name(name), nil
+}
+
+// NewName returns a project name given a project identifier.
+func NewName(ID string) Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, CollectionID, ID))
+}
+
+// NewNameWildcard a project name with a wildcard for the project identifier.
+func NewNameWildcard() Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, CollectionID, resources.Wildcard))
 }
 
 // IsValidID reports whether a project identifier is valid.
@@ -53,7 +60,7 @@ func IsValidID(ID string) bool {
 	return IDPattern.MatchString(ID)
 }
 
-// IsValidName reports whether a project name is valid.
-func IsValidName(name string) bool {
+// isValidName reports whether a project name is valid.
+func isValidName(name string) bool {
 	return NamePattern.MatchString(name)
 }
