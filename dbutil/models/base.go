@@ -8,7 +8,6 @@ import (
 
 // Base contains the base model definition.
 type Base struct {
-	ID        string `gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }
