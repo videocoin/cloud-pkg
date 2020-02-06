@@ -27,6 +27,7 @@ require (
 	github.com/hashicorp/consul/api v1.3.0
 	github.com/huin/goupnp v1.0.0 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
+	github.com/jinzhu/gorm v1.9.12
 	github.com/karalabe/hid v1.0.0 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.2.9

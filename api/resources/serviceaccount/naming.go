@@ -37,49 +37,39 @@ var (
 	NamePattern = regexp.MustCompile(`^projects/(([a-z][-a-z0-9]{3,48}[a-z0-9])|\-)/serviceAccounts/[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com$`)
 )
 
-// Name returns the service account's name given a project identifier and a
-// service account identifier.
-func Name(projID string, accEmail string) (string, error) {
-	projName, err := project.Name(projID)
-	if err != nil {
-		return "", err
-	}
-	if ok := IsValidEmail(accEmail); !ok {
-		return "", ErrInvalidEmail
-	}
+// Name is the service account's name.
+type Name string
 
-	return cstr.JoinWithSeparator(resources.NameSeparator, projName, CollectionID, accEmail), nil
+// Email returns the service account's email.
+func (n Name) Email() string {
+	return strings.SplitN(string(n), resources.NameSeparator, 4)[3]
 }
 
-// NameWithWildcard returns the service account's name with a wildcard for the
-// project id. Requests using `-` as a wildcard for the project identifier
-// will infer the project identifier from the account email.
-func NameWithWildcard(accEmail string) (string, error) {
-	if ok := IsValidEmail(accEmail); !ok {
-		return "", ErrInvalidEmail
-	}
-	return cstr.JoinWithSeparator(resources.NameSeparator, project.NameWithWildcard, CollectionID, accEmail), nil
-}
-
-// Email returns the service account's email given a project identifier and a
-// service account identifier.
-func Email(projID string, accID string) (string, error) {
-	if ok := project.IsValidID(projID); !ok {
-		return "", project.ErrInvalidID
-	}
-	if ok := IsValidID(accID); !ok {
-		return "", ErrInvalidID
-	}
-
-	return cstr.Join(accID, "@", projID, ".", Domain), nil
-}
-
-// EmailFromName derives the service account's email from its name.
-func EmailFromName(name string) (string, error) {
-	if ok := IsValidName(name); !ok {
+// ParseName parses a service account name.
+func ParseName(name string) (Name, error) {
+	if ok := isValidName(name); !ok {
 		return "", ErrInvalidName
 	}
-	return strings.SplitN(name, resources.NameSeparator, 4)[3], nil
+	return Name(name), nil
+}
+
+// NewName returns the service account's name given a project identifier and a
+// service account identifier.
+func NewName(projID string, accEmail string) Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(project.NewName(projID)), CollectionID, accEmail))
+}
+
+// NewNameWildcard returns the service account's name with a wildcard for the
+// project id. Requests using `-` as a wildcard for the project identifier
+// will infer the project identifier from the account email.
+func NewNameWildcard(accEmail string) Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(project.NewNameWildcard()), CollectionID, accEmail))
+}
+
+// NewEmail returns the service account's email given a project identifier and a
+// service account identifier.
+func NewEmail(projID string, accID string) string {
+	return cstr.Join(accID, "@", projID, ".", Domain)
 }
 
 // IsValidID reports whether a service account identifier is valid.
@@ -92,7 +82,7 @@ func IsValidEmail(name string) bool {
 	return EmailPattern.MatchString(name)
 }
 
-// IsValidName reports whether a service account name is valid.
-func IsValidName(name string) bool {
+// isValidName reports whether a service account name is valid.
+func isValidName(name string) bool {
 	return NamePattern.MatchString(name)
 }

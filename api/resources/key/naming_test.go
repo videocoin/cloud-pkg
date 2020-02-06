@@ -3,125 +3,66 @@ package key_test
 import (
 	"testing"
 
-	sa "github.com/videocoin/cloud-pkg/api/resources/serviceaccount"
-
 	"github.com/stretchr/testify/require"
 	"github.com/videocoin/cloud-pkg/api/resources/key"
-	"github.com/videocoin/cloud-pkg/api/resources/project"
 )
 
-func TestName(t *testing.T) {
+func TestNewName(t *testing.T) {
 	tests := []struct {
 		name                    string
 		projID, accEmail, keyID string
-		output                  string
-		err                     error
+		output                  key.Name
 	}{
-		{
-			name:     "invalid account email: id must have at least 3 chars",
-			projID:   "videocoin-123",
-			accEmail: "acc@videocoin-123.vserviceaccount.com",
-			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:   "",
-			err:      sa.ErrInvalidEmail,
-		},
-		{
-			name:     "invalid project id: starts with dash",
-			projID:   "-videocoin-123",
-			accEmail: "account1@videocoin-123.vserviceaccount.com",
-			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:   "",
-			err:      project.ErrInvalidID,
-		},
-		{
-			name:     "invalid key id",
-			projID:   "videocoin-123",
-			accEmail: "account1@videocoin-123.vserviceaccount.com",
-			keyID:    "a193-4b59-a539-8c06beb2eeb5",
-			output:   "",
-			err:      key.ErrInvalidID,
-		},
 		{
 			name:     "valid project id, account email and key id",
 			projID:   "videocoin-123",
 			accEmail: "account1@videocoin-123.vserviceaccount.com",
 			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:   "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			err:      nil,
+			output:   key.Name("projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5"),
 		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			output, err := key.Name(test.projID, test.accEmail, test.keyID)
-			require.Equal(t, test.err, err)
-			require.Equal(t, test.output, output)
+			require.Equal(t, test.output, key.NewName(test.projID, test.accEmail, test.keyID))
 		})
 	}
 }
 
-func TestNameWithWildcard(t *testing.T) {
+func TestNewNameWildcard(t *testing.T) {
 	tests := []struct {
 		name            string
 		accEmail, keyID string
-		output          string
-		err             error
+		output          key.Name
 	}{
-		{
-			name:     "invalid account email: id must have at least 3 chars",
-			accEmail: "acc@videocoin-123.vserviceaccount.com",
-			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:   "",
-			err:      sa.ErrInvalidEmail,
-		},
-		{
-			name:     "invalid key id",
-			accEmail: "account1@videocoin-123.vserviceaccount.com",
-			keyID:    "a193-4b59-a539-8c06beb2eeb5",
-			output:   "",
-			err:      key.ErrInvalidID,
-		},
 		{
 			name:     "valid account email and key id",
 			accEmail: "account1@videocoin-123.vserviceaccount.com",
 			keyID:    "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:   "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			err:      nil,
+			output:   key.Name("projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5"),
 		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			output, err := key.NameWithWildcard(test.accEmail, test.keyID)
-			require.Equal(t, test.err, err)
-			require.Equal(t, test.output, output)
+			require.Equal(t, test.output, key.NewNameWildcard(test.accEmail, test.keyID))
 		})
 	}
 }
 
-func TestIDFromName(t *testing.T) {
+func TestNameID(t *testing.T) {
 	tests := []struct {
 		name    string
-		keyName string
+		keyName key.Name
 		output  string
-		err     error
 	}{
 		{
-			name:    "invalid name: invalid key id",
-			keyName: "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/a193-4b59-a539-8c06beb2eeb5",
-			output:  "",
-			err:     key.ErrInvalidName,
-		},
-		{
-			name:    "valid name",
-			keyName: "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
+			name:    "valid key name",
+			keyName: key.Name("projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5"),
 			output:  "5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			err:     nil,
 		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			output, err := key.IDFromName(test.keyName)
-			require.Equal(t, test.err, err)
-			require.Equal(t, test.output, output)
+			require.Equal(t, test.output, test.keyName.ID())
 		})
 	}
 }
@@ -150,31 +91,37 @@ func TestIsValidID(t *testing.T) {
 	}
 }
 
-func TestIsValidName(t *testing.T) {
+func TestParseName(t *testing.T) {
 	tests := []struct {
 		name    string
 		keyName string
-		output  bool
+		output  key.Name
+		err     error
 	}{
 		{
 			name:    "invalid name: invalid key id",
 			keyName: "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/a193-4b59-a539-8c06beb2eeb5",
-			output:  false,
+			output:  "",
+			err:     key.ErrInvalidName,
 		},
 		{
 			name:    "valid name wildcard",
 			keyName: "projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:  true,
+			output:  key.Name("projects/-/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5"),
+			err:     nil,
 		},
 		{
 			name:    "valid name",
 			keyName: "projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5",
-			output:  true,
+			output:  key.Name("projects/videocoin-123/serviceAccounts/account1@videocoin-123.vserviceaccount.com/keys/5325f2f9-a193-4b59-a539-8c06beb2eeb5"),
+			err:     nil,
 		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			require.Equal(t, test.output, key.IsValidName(test.keyName))
+			output, err := key.ParseName(test.keyName)
+			require.Equal(t, test.err, err)
+			require.Equal(t, test.output, output)
 		})
 	}
 }

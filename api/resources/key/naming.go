@@ -31,44 +31,33 @@ var (
 	NamePattern = regexp.MustCompile(`^projects/(([a-z][-a-z0-9]{3,48}[a-z0-9])|\-)/serviceAccounts/[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com/keys/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[8|9|aA|bB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$`)
 )
 
-// IDFromName derives the key's identifier from its name.
-func IDFromName(name string) (string, error) {
-	if ok := IsValidName(name); !ok {
+// Name is the key's name.
+type Name string
+
+// ID returns the key's identifier.
+func (n Name) ID() string {
+	return strings.SplitN(string(n), resources.NameSeparator, 6)[5]
+}
+
+// ParseName parses a service account name.
+func ParseName(name string) (Name, error) {
+	if ok := isValidName(name); !ok {
 		return "", ErrInvalidName
 	}
-	return strings.SplitN(name, resources.NameSeparator, 6)[5], nil
+	return Name(name), nil
 }
 
-// Name returns the key's name given a project identifier and a
+// NewName returns the key's name given a project identifier and a
 // service account email.
-func Name(projID string, accEmail string, keyID string) (string, error) {
-	saName, err := sa.Name(projID, accEmail)
-	if err != nil {
-		return "", err
-	}
-	if ok := IsValidID(keyID); !ok {
-		return "", ErrInvalidID
-	}
-	return cstr.JoinWithSeparator(resources.NameSeparator, saName, CollectionID, keyID), nil
+func NewName(projID string, accEmail string, keyID string) Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(sa.NewName(projID, accEmail)), CollectionID, keyID))
 }
 
-// NameWithWildcard returns the service account's key name with a wildcard for
+// NewNameWildcard returns the service account's key name with a wildcard for
 // the project id. Requests using `-` as a wildcard for the project identifier
 // will infer the project identifier from the account email.
-func NameWithWildcard(accEmail, keyID string) (string, error) {
-	saName, err := sa.NameWithWildcard(accEmail)
-	if err != nil {
-		return "", err
-	}
-	if ok := IsValidID(keyID); !ok {
-		return "", ErrInvalidID
-	}
-	return cstr.JoinWithSeparator(resources.NameSeparator, saName, CollectionID, keyID), nil
-}
-
-// IsValidName reports whether a key name is valid.
-func IsValidName(name string) bool {
-	return NamePattern.MatchString(name)
+func NewNameWildcard(accEmail, keyID string) Name {
+	return Name(cstr.JoinWithSeparator(resources.NameSeparator, string(sa.NewNameWildcard(accEmail)), CollectionID, keyID))
 }
 
 // IsValidID reports whether a key identifier is valid.
@@ -76,4 +65,9 @@ func IsValidName(name string) bool {
 func IsValidID(ID string) bool {
 	_, err := guuid.Parse(ID)
 	return err == nil
+}
+
+// isValidName reports whether a key name is valid.
+func isValidName(name string) bool {
+	return NamePattern.MatchString(name)
 }
