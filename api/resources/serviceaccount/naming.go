@@ -32,9 +32,9 @@ var (
 	// IDPattern is the service account identifier pattern.
 	IDPattern = regexp.MustCompile(`^[a-z][-a-z0-9]{4,28}[a-z0-9]$`)
 	// EmailPattern is the service account email pattern.
-	EmailPattern = regexp.MustCompile(`^[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com$`)
+	EmailPattern = regexp.MustCompile(`^[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z0-9][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com$`)
 	// NamePattern is the service account name pattern.
-	NamePattern = regexp.MustCompile(`^projects/(([a-z0-9][-a-z0-9]{3,48}[a-z0-9])|\-)/serviceAccounts/[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com$`)
+	NamePattern = regexp.MustCompile(`^projects/(([a-z0-9][-a-z0-9]{3,48}[a-z0-9])|\-)/serviceAccounts/[a-z][-a-z0-9]{4,28}[a-z0-9]@[a-z0-9][-a-z0-9]{3,48}[a-z0-9]\.vserviceaccount\.com$`)
 )
 
 // Name is the service account's name.
