@@ -31,6 +31,7 @@ require (
 	github.com/karalabe/hid v1.0.0 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.2.9
+	github.com/mailru/dbr v3.0.0+incompatible
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/prometheus/client_golang v0.9.4 // indirect
