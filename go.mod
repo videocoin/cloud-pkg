@@ -3,6 +3,7 @@ module github.com/videocoin/cloud-pkg
 go 1.12
 
 require (
+	github.com/TheZeroSlave/zapsentry v1.3.0
 	github.com/allegro/bigcache v1.2.0 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20190607111240-52c2a7864a08 // indirect
 	github.com/bsm/redis-lock v8.0.0+incompatible
@@ -30,7 +31,7 @@ require (
 	github.com/jinzhu/gorm v1.9.12
 	github.com/karalabe/hid v1.0.0 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
-	github.com/labstack/gommon v0.2.9
+	github.com/labstack/gommon v0.3.0
 	github.com/mailru/dbr v3.0.0+incompatible
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pborman/uuid v1.2.0 // indirect
@@ -40,12 +41,13 @@ require (
 	github.com/rs/cors v1.6.0 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
-	github.com/stretchr/testify v1.3.0
+	github.com/stretchr/objx v0.2.0 // indirect
+	github.com/stretchr/testify v1.4.0
 	github.com/syndtr/goleveldb v1.0.0 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
 	github.com/videocoin/cloud-api v0.0.17
-	go.uber.org/atomic v1.5.1 // indirect
+	go.uber.org/zap v1.14.1
 	golang.org/x/lint v0.0.0-20191125180803-fdd1cda4f05f // indirect
 	golang.org/x/tools v0.0.0-20200128002243-345141a36859 // indirect
 	google.golang.org/grpc v1.21.1
