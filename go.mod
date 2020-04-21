@@ -34,6 +34,7 @@ require (
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.3.0
 	github.com/mailru/dbr v3.0.0+incompatible
+	github.com/mailru/go-clickhouse v1.3.0 // indirect
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/prometheus/client_golang v0.9.4 // indirect
@@ -50,8 +51,10 @@ require (
 	github.com/videocoin/cloud-api v0.0.17
 	go.uber.org/zap v1.14.1
 	golang.org/x/lint v0.0.0-20191125180803-fdd1cda4f05f // indirect
+	golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be
 	golang.org/x/tools v0.0.0-20200128002243-345141a36859 // indirect
 	google.golang.org/grpc v1.21.1
+	gopkg.in/DATA-DOG/go-sqlmock.v1 v1.3.0 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 	gopkg.in/urfave/cli.v1 v1.20.0 // indirect
 )
