@@ -18,6 +18,7 @@ require (
 	github.com/evalphobia/logrus_sentry v0.8.2
 	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5 // indirect
 	github.com/getsentry/raven-go v0.2.0 // indirect
+	github.com/getsentry/sentry-go v0.3.0
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/gogo/protobuf v1.2.1
 	github.com/google/uuid v1.0.0
